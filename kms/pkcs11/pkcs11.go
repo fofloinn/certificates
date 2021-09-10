@@ -90,7 +90,7 @@ func New(ctx context.Context, opts apiv1.Options) (*PKCS11, error) {
 
 	p11, err := p11Configure(&config)
 	if err != nil {
-		fmt.Printf(config)
+		fmt.Println(config)
 		return nil, errors.Wrap(err, "error initializing PKCS#11")
 	}
 
