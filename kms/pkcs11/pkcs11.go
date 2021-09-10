@@ -93,7 +93,7 @@ func New(ctx context.Context, opts apiv1.Options) (*PKCS11, error) {
 		fmt.Println(config)
 		fmt.Println(config.Path)
 		fmt.Println(config.Pin)
-		fmt.Println(config.Token)
+		fmt.Println(config.TokenLabel)
 		fmt.Println(config.TokenSerial)
 		return nil, errors.Wrap(err, "error initializing PKCS#11")
 	}
