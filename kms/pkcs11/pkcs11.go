@@ -57,7 +57,6 @@ func New(ctx context.Context, opts apiv1.Options) (*PKCS11, error) {
 		if err != nil {
 			return nil, err
 		}
-
 		config.Pin = u.Pin()
 		config.Path = u.Get("module-path")
 		config.TokenLabel = u.Get("token")
@@ -91,6 +90,7 @@ func New(ctx context.Context, opts apiv1.Options) (*PKCS11, error) {
 
 	p11, err := p11Configure(&config)
 	if err != nil {
+		fmt.Printf(config)
 		return nil, errors.Wrap(err, "error initializing PKCS#11")
 	}
 
